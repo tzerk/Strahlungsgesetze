@@ -4,7 +4,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
   
   # Application title
-  headerPanel("Strahlungsgesetze"),
+  headerPanel(div(align = "center", class = "alert alert-info", h4("Strahlungsgesetze")), windowTitle = "Strahlungsgesetze"),
   
   # Sidebar with a slider input
   sidebarPanel(
