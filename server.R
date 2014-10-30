@@ -28,7 +28,7 @@ Planck<- function(t) {
 }
 
 Wien<- function(t) {
-  lambda_max<- round(2897/t,2)
+  lambda_max<- round(2897.8/t,2)
   return(lambda_max)
 }
 
@@ -76,18 +76,18 @@ shinyServer(function(input, output, session) {
     lambda_max<- Wien(t)
     
     str<- HTML(paste("<b>Parameter</b>",
-                     "<br>Temperatur (K): ", t,
+                     "<br>Temperatur: ", t,"K",
                      "<br>Emissionsvermögen: ",e,
                      "<br><br><b>Stefan-Boltzmann-Gesetz</b>",
-                     "<br>Spezifische Ausstrahlung (W/m<sup>2</sup>): ",A,
+                     "<br>Spezifische Ausstrahlung: ",A,"W/m<sup>2</sup>",
                      "<br><br><b>Wien'sches Verschiebungsgesetz</b>",
-                     "<br>&Lambda;<sub>max</sub>: ",lambda_max))
+                     "<br>&lambda;<sub>max</sub>: ",lambda_max," &mu;m"))
     str
   })
   
   #### IMAGE ####
   output$spectrum<- renderUI({ 
-    HTML("<img src='spectrum.png'>Quelle: <a href='http://de.wikipedia.org/wiki/Elektromagnetisches_Spektrum'>Wikipedia</a></img>")
+    HTML("<img src='http://upload.wikimedia.org/wikipedia/commons/1/15/Electromagnetic_spectrum_c.svg'>Quelle: <a href='http://de.wikipedia.org/wiki/Elektromagnetisches_Spektrum'>Wikipedia</a></img>")
   })
       
 })
