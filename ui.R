@@ -22,7 +22,7 @@ shinyUI(pageWithSidebar(
       helpText('Stefan-Boltzmann-Gesetz
                $$P=\\epsilon \\sigma T^4$$')),
     withMathJax(
-      helpText("$$\\sigma = 5.67*10^{-6} [Wm^2K^{-4}]$$")),
+      helpText("$$\\sigma = 5.67*10^{-8} [Wm^2K^{-4}]$$")),
     withMathJax(
       helpText("Wien'sches Verschiebungsgesetz
                $$\\lambda_{max}=\\frac{2897.8}{T}$$")),
