@@ -74,10 +74,10 @@ shinyServer(function(input, output, session) {
     e<- input$emission
     A<- Boltzmann(e,t)
     lambda_max<- Wien(t)
-    f<- format(3*10^8/(lambda_max*10^-6),scientific = TRUE)
+    f<- format(3*10^8/(lambda_max*10^-6),scientific = TRUE, digits = 3)
     f.char<- substring(f,seq(nchar(f)),seq(nchar(f)))
-    f.dig<- f.char[1]
-    f.exp<- as.integer(paste(f.char[4:5],collapse = ""))
+    f.dig<- paste0(f.char[1:(which(f.char=="e")-1)],collapse="")
+    f.exp<- as.integer(paste(f.char[(length(f.char)-1):length(f.char)],collapse = ""))
     
     str<- HTML(paste("<b>Parameter</b>",
                      "<br>Temperatur: ", t,"K",
